@@ -94,6 +94,9 @@ export const metadata: Metadata = {
     // apple: "/apple-touch-icon.png"  — add a 180×180 PNG here for iOS home-screen
   },
   // manifest: "/site.webmanifest"  — add for PWA installability
+  verification: {
+    google: "RPr0f1FpC10w7twd",
+  },
 };
 
 export const viewport: Viewport = {
