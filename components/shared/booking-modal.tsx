@@ -61,29 +61,27 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
     startTransition(async () => {
       try {
         setIsError(false);
-        // Placeholders for environment variables
-        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
-        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+        const serviceId  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+        const publicKey  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+          throw new Error("EmailJS environment variables are not configured.");
+        }
 
         const templateParams = {
-          patient_name: data.fullName,
-          patient_phone: data.phone,
-          patient_email: data.email || "N/A",
-          preferred_date: data.date,
-          preferred_time: data.time,
-          treatment: data.treatment || "General Consultation",
-          notes: data.notes || "No additional notes",
+          patient_name:    data.fullName,
+          patient_phone:   data.phone,
+          patient_email:   data.email || "N/A",
+          preferred_date:  data.date,
+          preferred_time:  data.time,
+          treatment:       data.treatment || "General Consultation",
+          notes:           data.notes || "No additional notes",
           submission_time: new Date().toLocaleString(),
-          to_email: "anshneha26@gmail.com",
+          to_email:        "anshneha26@gmail.com",
         };
 
-        if (serviceId !== "YOUR_SERVICE_ID") {
-          await emailjs.send(serviceId, templateId, templateParams, publicKey);
-        } else {
-          // Mock successful submission for dev if vars are not set
-          await new Promise((resolve) => setTimeout(resolve, 1500));
-        }
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
         setIsSuccess(true);
       } catch (err) {
