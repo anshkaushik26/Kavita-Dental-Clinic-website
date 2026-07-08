@@ -42,7 +42,7 @@ type FormValues = z.infer<typeof formSchema>;
 export function BookingModal({ children }: { children: React.ReactElement }) {
   const [open, setOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [emailFailed, setEmailFailed] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const today = new Date();
@@ -60,7 +60,7 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
   const onSubmit = (data: FormValues) => {
     startTransition(async () => {
       try {
-        setIsError(false);
+        setEmailFailed(false);
         const serviceId  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
         const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
         const publicKey  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -86,7 +86,10 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
         setIsSuccess(true);
       } catch (err) {
         console.error("EmailJS Error:", err);
-        setIsError(true);
+        // Still show the success popup — the patient should not see a raw error.
+        // The emailFailed flag adds a soft nudge to call/WhatsApp if urgent.
+        setEmailFailed(true);
+        setIsSuccess(true);
       }
     });
   };
@@ -98,7 +101,7 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
       setTimeout(() => {
         reset();
         setIsSuccess(false);
-        setIsError(false);
+        setEmailFailed(false);
       }, 300);
     }
   };
@@ -120,11 +123,13 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
                 Appointment Request Sent!
               </DialogTitle>
               <DialogDescription className="text-base text-muted-foreground leading-relaxed max-w-[320px] mx-auto">
-                Thank you for choosing Kavita Dental Clinic. We have successfully received your appointment request. Our team will contact you shortly to confirm your appointment.
+                Thank you for choosing Kavita Dental Clinic. Our team will contact you shortly to confirm your appointment.
               </DialogDescription>
             </div>
             <p className="text-sm font-medium text-foreground/80 bg-muted/50 py-3 px-4 rounded-xl border border-border/50">
-              If your concern is urgent, please call or WhatsApp us directly.
+              {emailFailed
+                ? "Our team will contact you shortly to confirm your appointment. If your concern is urgent, please call or WhatsApp us directly."
+                : "If your concern is urgent, please call or WhatsApp us directly."}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 w-full pt-2">
               <a
@@ -271,11 +276,7 @@ export function BookingModal({ children }: { children: React.ReactElement }) {
                 />
               </div>
 
-              {isError && (
-                <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium text-center">
-                  Something went wrong while sending your appointment request. Please try again or contact us on WhatsApp.
-                </div>
-              )}
+
 
               <div className="pt-2">
                 <Button
