@@ -306,12 +306,12 @@ export type GalleryItem = {
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   { id: "gallery-1", category: "Clinic Exterior", label: "Clinic Exterior", aspectClass: "aspect-[4/3]", image: "/images/clinic-exterior.webp", objectPositionClass: "object-center" },
-  { id: "gallery-2", category: "Reception",       label: "Reception Area",  aspectClass: "aspect-[4/3]", image: "/images/reception 2.webp", objectPositionClass: "object-center" },
+  { id: "gallery-2", category: "Reception",       label: "Reception Area",  aspectClass: "aspect-[4/3]", image: "/images/reception final.jpeg", objectPositionClass: "object-center" },
   { id: "gallery-3", category: "Dental Camp",     label: "Dental Camp",     aspectClass: "aspect-[4/3]", image: "/images/camp.webp", objectPositionClass: "object-center" },
   { id: "gallery-4", category: "Dental Chair",    label: "Dental Chair",    aspectClass: "aspect-[4/3]", image: "/images/treatment-room.webp", objectPositionClass: "object-center" },
   { id: "gallery-5", category: "Doctors at Work", label: "Doctors at Work", aspectClass: "aspect-[4/3]", image: "/images/treatment-chair.webp", objectPositionClass: "object-center" },
   { id: "gallery-6", category: "Doctors at Work", label: "Doctors at Work", aspectClass: "aspect-[4/3]", image: "/images/t2.webp", objectPositionClass: "object-[center_20%]" },
-  { id: "gallery-7", category: "Equipment",       label: "Equipment",       aspectClass: "aspect-[4/3]", image: "/images/interior.jpg", objectPositionClass: "object-center" },
+  { id: "gallery-7", category: "Equipment",       label: "Equipment",       aspectClass: "aspect-[4/3]", image: "/images/equipment.jpeg", objectPositionClass: "object-center" },
   { id: "gallery-8", category: "Patient Treatment",label: "Patient Treatment",aspectClass: "aspect-[4/3]", image: "/images/hero-treatment.webp", objectPositionClass: "object-[center_30%]" },
 ];
 
