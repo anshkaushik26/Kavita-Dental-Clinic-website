@@ -302,6 +302,7 @@ export type GalleryItem = {
   aspectClass: string;  // Tailwind aspect ratio class
   image: string;
   objectPositionClass?: string;
+  hideLabel?: boolean;  // When true, the top-left category badge is hidden
 };
 
 export const GALLERY_ITEMS: GalleryItem[] = [
@@ -311,7 +312,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   { id: "gallery-4", category: "Dental Chair",    label: "Dental Chair",    aspectClass: "aspect-[4/3]", image: "/images/treatment-room.webp", objectPositionClass: "object-center" },
   { id: "gallery-5", category: "Doctors at Work", label: "Doctors at Work", aspectClass: "aspect-[4/3]", image: "/images/treatment-chair.webp", objectPositionClass: "object-center" },
   { id: "gallery-6", category: "Doctors at Work", label: "Doctors at Work", aspectClass: "aspect-[4/3]", image: "/images/t2.webp", objectPositionClass: "object-[center_20%]" },
-  { id: "gallery-7", category: "Equipment",       label: "Equipment",       aspectClass: "aspect-[4/3]", image: "/images/equipment.jpeg", objectPositionClass: "object-center" },
+  { id: "gallery-7", category: "Equipment",       label: "Equipment",       aspectClass: "aspect-[4/3]", image: "/images/equipment.jpeg", objectPositionClass: "object-center", hideLabel: true },
   { id: "gallery-8", category: "Patient Treatment",label: "Patient Treatment",aspectClass: "aspect-[4/3]", image: "/images/hero-treatment.webp", objectPositionClass: "object-[center_30%]" },
 ];
 
