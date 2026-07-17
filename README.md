@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🦷 Kavita Dental Clinic Website
 
-## Getting Started
+A modern, production-ready website built for a real dental clinic in Rohini, Delhi to improve online presence, patient engagement, and appointment bookings.
 
-First, run the development server:
+🌐 Live Website: https://www.kavitadental.com
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  About The Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Kavita Dental Clinic has been serving families in Rohini since 2005.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project was built to transform the clinic's traditional offline presence into a modern digital experience with:
 
-## Learn More
+- Online appointment booking
+- Mobile responsive design
+- Treatment showcase pages
+- Google Maps integration
+- WhatsApp contact support
+- SEO optimization
+- Google Search Console integration
 
-To learn more about Next.js, take a look at the following resources:
+The goal was to create a professional healthcare website that patients can easily use from any device.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##  Features
 
-## Deploy on Vercel
+### 🦷 Clinic Information
+- Doctor profiles
+- Clinic timings
+- Contact information
+- Location details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📅 Appointment Booking System
+- Patient appointment request form
+- Treatment selection
+- Preferred date and time selection
+- Automated email notifications
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Communication
+- WhatsApp integration
+- One-click calling support
+- Contact form support
+
+###  Responsive Design
+- Fully optimized for:
+  - Desktop
+  - Tablet
+  - Mobile devices
+
+### 🔍 SEO & Discoverability
+- Search engine optimized metadata
+- Sitemap generation
+- Robots.txt configuration
+- Google Search Console verification
+- Custom favicon and metadata
+
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+
+### UI Components
+- shadcn/ui
+- Lucide React Icons
+
+### Backend & Services
+- EmailJS
+- Google Maps Embed API
+
+### Deployment & Infrastructure
+- Vercel
+- Custom Domain Configuration
+
+### SEO Tools
+- Google Search Console
+- Sitemap
+- Metadata Optimization
+
+---
+
+## 📷 Screenshots
+
+### Homepage
+Premium hero section with real clinic images and clear call-to-actions.
+
+### Treatments Page
+Detailed treatment information with benefits and booking options.
+
+### Appointment System
+Easy-to-use booking flow for patients.
+
+### Mobile Experience
+Fully responsive design for mobile users.
+
+---
+
+## 🚀 Deployment
+
+The application is deployed using Vercel with automatic deployments connected to GitHub.
+
+Production URL:
+
+https://www.kavitadental.com
+
+---
+
+📈 Business Impact
+
+- Improved digital presence
+- Easier appointment scheduling
+- Better accessibility for patients
+- Enhanced discoverability through SEO
+- Professional online branding
+
+---
+ What I Learned
+
+Building this project helped me gain practical experience with:
+
+- Next.js App Router
+- React component architecture
+- TypeScript
+- API integrations
+- Email automation
+- SEO optimization
+- Domain management
+- Production deployment workflows
+- Google Search Console integration
+
+---
+
+ Author
+
+**Ansh Kaushik**
+
+GitHub:
+https://github.com/anshkaushik26
+
+LinkedIn:
+https://linkedin.com/in/anshkaushik26
+
+---
+ This is only the beginning.
